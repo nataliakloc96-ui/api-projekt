@@ -34,6 +34,21 @@ Pozwala zarządzać użytkownikami (CRUD) oraz posiada system logowania z autory
 
 ---
 
+## 📊 Data Pipeline (ETL)
+
+Projekt zawiera pipeline danych:
+
+* Extract: dane z pliku CSV
+* Transform: filtrowanie i tworzenie kategorii (pandas)
+* Load: zapis do PostgreSQL
+* Automatyzacja: pipeline może być uruchamiany cyklicznie (scheduler)
+
+Endpoint:
+
+* `/analytics` – agregacja danych (FastAPI + PostgreSQL)
+
+---
+
 ## ⚙️ Uruchomienie lokalne
 
 ```bash
