@@ -186,3 +186,14 @@ def login(user: User):
     
     return {"message": "Invalid credentials"}
 
+@app.get("/analytics")
+def analytics():
+    conn = sqlite3.connect("data.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT age_group, COUNT(*) FROM users_clean GROUP BY age_group")
+    data = cursor.fetchall()
+
+    conn.close()
+    return {"analytics": data}
+
